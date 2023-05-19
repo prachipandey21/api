@@ -1,0 +1,747 @@
+{
+	"info": {
+		"_postman_id": "d4083544-0855-4c5f-9ca9-fbce04746ed0",
+		"name": "Assignments",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Assertion to chk statuscode 200",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"id": "7085e85e-a360-4af0-a96f-06ef6f5ebbd9"
+					}
+				}
+			],
+			"_postman_id": "a8c35500-18ed-4e52-9a02-10d1cfc0e66d",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://reqres.in/api/users?page=2",
+					"protocol": "https",
+					"host": [
+						"reqres",
+						"in"
+					],
+					"path": [
+						"api",
+						"users"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Assertion for checking response value 2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var respData=pm.response.json();\r",
+							"pm.test(\"Page is :\"+respData.page, function() {\r",
+							"\r",
+							"pm.expect(respData.page).to.eql(2);\r",
+							"\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"id": "fd453d87-8a07-4014-9609-92d9799b763d"
+					}
+				}
+			],
+			"_postman_id": "a35408da-05f3-40f8-b33d-706933ac881a",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://reqres.in/api/users?page=2",
+					"protocol": "https",
+					"host": [
+						"reqres",
+						"in"
+					],
+					"path": [
+						"api",
+						"users"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AssertionPerPage",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var respData= pm.response.json();\r",
+							"pm.test(\"per_page is :\"+respData.per_page, function() {\r",
+							"\r",
+							"pm.expect(respData.per_page).to.eql(6);\r",
+							"\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"id": "0aad53f3-f13f-4ce1-8759-48e87486df76"
+					}
+				}
+			],
+			"_postman_id": "30af5522-6239-4fe7-9d47-2bedee86d167",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://reqres.in/api/users?page=2",
+					"protocol": "https",
+					"host": [
+						"reqres",
+						"in"
+					],
+					"path": [
+						"api",
+						"users"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AssertionForId",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var respData=pm.response.json();\r",
+							"pm.test(\"First id is :\"+respData.data[0].id, function() {\r",
+							"\r",
+							"pm.expect(respData.data[0].id).to.eql(7);\r",
+							"\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"id": "acaec3bc-6b9b-4e6c-94f7-2c3d7718c1d7"
+					}
+				}
+			],
+			"_postman_id": "bcb623eb-f013-4935-b4aa-071d2d3c1e9a",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://reqres.in/api/users?page=2",
+					"protocol": "https",
+					"host": [
+						"reqres",
+						"in"
+					],
+					"path": [
+						"api",
+						"users"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AssetionForEmail",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var respData=pm.response.json();\r",
+							"pm.test(\"First email is :\"+respData.data[0].email, function() { pm.expect(respData.data[0].email).to.eql(\"michael.lawson@reqres.in\");\r",
+							"\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"id": "d8a16702-a637-409f-b0b3-105c99ac16ec"
+					}
+				}
+			],
+			"_postman_id": "c199bc18-16a5-4da7-bcc9-f44f1c79088e",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://reqres.in/api/users?page=2",
+					"protocol": "https",
+					"host": [
+						"reqres",
+						"in"
+					],
+					"path": [
+						"api",
+						"users"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AssertionCheckingBlankEmail",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var respData=pm.response.json();\r",
+							"for( i =0;i<respData.data.length;i++){\r",
+							"\r",
+							"pm.test(\"Email must not be null :\"+respData.data[i].email, function() {\r",
+							"\r",
+							"pm.expect(respData.data[i].email).not.eql(\"\");\r",
+							"\r",
+							"})};"
+						],
+						"type": "text/javascript",
+						"id": "c781a4c0-b5ac-4509-b746-0626a3f8b829"
+					}
+				}
+			],
+			"_postman_id": "143614ed-fa56-4f3d-a1b1-f4a24d0f84d2",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://reqres.in/api/users?page=2",
+					"protocol": "https",
+					"host": [
+						"reqres",
+						"in"
+					],
+					"path": [
+						"api",
+						"users"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CollectionVariable",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var respData=pm.response.json();\r",
+							"pm.collectionVariables.set(\"page\",respData.page);"
+						],
+						"type": "text/javascript",
+						"id": "72728b06-eea8-4560-ac3e-213ee0aef053"
+					}
+				}
+			],
+			"_postman_id": "ee8902f6-1d2c-4939-a981-012cf1a43875",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://reqres.in/api/users?page=2",
+					"protocol": "https",
+					"host": [
+						"reqres",
+						"in"
+					],
+					"path": [
+						"api",
+						"users"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "NewCollectionVariable",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var newPage = pm.collectionVariables.get(\"page\");\r",
+							"pm.collectionVariables.set(\"newPage\",newPage);"
+						],
+						"type": "text/javascript",
+						"id": "2270aa7c-d7f3-460b-8bbd-55c88fb3aabb"
+					}
+				}
+			],
+			"_postman_id": "34aa6b72-c8e0-4cac-bfce-710901b2181b",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://reqres.in/api/users?page=2",
+					"protocol": "https",
+					"host": [
+						"reqres",
+						"in"
+					],
+					"path": [
+						"api",
+						"users"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SetValueInEnvironmentVariables",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var respData = pm.response.json();\r",
+							"\r",
+							"pm.environment.set(\"perPageEnv\",respData.per_page);"
+						],
+						"type": "text/javascript",
+						"id": "dbe59b4e-c59a-4160-a461-123b93c4ab8b"
+					}
+				}
+			],
+			"_postman_id": "fe390637-84ca-41a0-93e1-192ddd95cfaf",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://reqres.in/api/users?page=2",
+					"protocol": "https",
+					"host": [
+						"reqres",
+						"in"
+					],
+					"path": [
+						"api",
+						"users"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SetGlobalVariable",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var respData = pm.response.json();\r",
+							"\r",
+							"pm.globals.set(\"perPageGlobal\",respData.per_page);"
+						],
+						"type": "text/javascript",
+						"id": "2251d29f-e00f-4512-80e8-31aebef62e30"
+					}
+				}
+			],
+			"_postman_id": "edc86eb7-2295-4c31-8dad-edbbb8208d2c",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://reqres.in/api/users?page=2",
+					"protocol": "https",
+					"host": [
+						"reqres",
+						"in"
+					],
+					"path": [
+						"api",
+						"users"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PostToAddData",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response Status is 201\",function(){\r",
+							"\r",
+							"pm.response.to.have.status(201);\r",
+							"\r",
+							"});\r",
+							"var jsonData = pm.response.json();\r",
+							"pm.test(\"Validate the presence of the nodes name, job and id \", function()\r",
+							"\r",
+							"{\r",
+							"\r",
+							"pm.expect(jsonData).to.have.property(\"name\");\r",
+							"\r",
+							"pm.expect(jsonData).to.have.property(\"job\");\r",
+							"\r",
+							"pm.expect(jsonData).to.have.property(\"id\");\r",
+							"\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"id": "3584839c-51a5-4339-9f64-6910c729f65b"
+					}
+				}
+			],
+			"_postman_id": "c9a0f4ad-dded-470d-89e4-00aec22d4c00",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"name\":\"morpheus\", \"job\":\"leader\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://reqres.in/api/users"
+			},
+			"response": []
+		},
+		{
+			"name": "Assignment12",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"var body = {\r",
+							"\r",
+							"name: 'morpheus',\r",
+							"\r",
+							"job: 'leader',\r",
+							"\r",
+							"};\r",
+							"\r",
+							"var body_str = JSON.stringify(body);\r",
+							"\r",
+							"pm.environment.set('request_body', body_str);"
+						],
+						"type": "text/javascript",
+						"id": "96fe4ea2-cb21-4a9c-8ade-2423b58d13ea"
+					}
+				}
+			],
+			"_postman_id": "f028a309-2019-4ec6-a4c0-b8e67a3b5aff",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{{request_body}}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://reqres.in/api/users"
+			},
+			"response": []
+		},
+		{
+			"name": "url hostname from environment",
+			"_postman_id": "39a3fd92-3a3c-4044-86dd-a911172f1e95",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/users?page={{pageStatic}}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"users"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "{{pageStatic}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Collection Variable",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"id": "dfe564c0-fcc9-44b6-8d90-e0758c8f6425"
+					}
+				}
+			],
+			"_postman_id": "f42450a2-6bdf-40e3-af60-45a54580ebb0",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/users?page=2",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"users"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SameHostName",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var urlPath = pm.request.url.getHost();\r",
+							"\r",
+							"var ActualEnvUrl = pm.environment.get(\"url\");\r",
+							"\r",
+							"var GetCoreEnvUrl = ActualEnvUrl.split(\"//\");\r",
+							"\r",
+							"var CoreEnvUrl = GetCoreEnvUrl[1];\r",
+							"\r",
+							"pm.test(\"HostName is Same :\", function() {\r",
+							"\r",
+							"pm.expect(CoreEnvUrl).to.eql(urlPath);\r",
+							"\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"id": "cc68ceba-72d7-4685-915c-0c6966683ece"
+					}
+				}
+			],
+			"_postman_id": "71128e0b-2183-4777-8beb-1d66fe73f6d1",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "https://reqres.in/api/users"
+			},
+			"response": []
+		},
+		{
+			"name": "AssertingForNonNullValue",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var respData = pm.response.json();\r",
+							"\r",
+							"for(var i=0; i<respData.data.length; i++)\r",
+							"\r",
+							"{\r",
+							"\r",
+							"pm.test(\"Id not null :\"+respData.data[i].id, function() {\r",
+							"\r",
+							"pm.expect(respData.data[i].id).not.eql(\"\");\r",
+							"\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Name not null :\"+respData.data[i].name, function() {\r",
+							"\r",
+							"pm.expect(respData.data[i].name).not.eql(\"\");\r",
+							"\r",
+							"});\r",
+							"\r",
+							"}"
+						],
+						"type": "text/javascript",
+						"id": "d7efb701-42f5-40d2-9523-d0c1a122d40f"
+					}
+				}
+			],
+			"_postman_id": "3f1fabd6-e9b7-422e-8d28-4b662a6b46bc",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "https://reqres.in/api/user"
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				],
+				"id": "b4072838-f4fc-4f33-875f-cf73740b8804"
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				],
+				"id": "5c608ca1-3c29-4fcf-9bb9-2d90a3f223ba"
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "6f4d9752-4b87-49d4-a79b-0c649422c52f",
+			"key": "page",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"id": "d37e2ead-2e0f-43d1-8769-a18e8cf3b15f",
+			"key": "newPage",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"id": "661d4ef3-4f96-4674-bfb8-e9293d28dfaa",
+			"key": "url",
+			"value": "",
+			"type": "default"
+		}
+	]
+}
